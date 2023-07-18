@@ -1,11 +1,11 @@
-<% if @timers.empty? %>
-  <p>No timers.</p>
-<% end %>
-
 <nav>
   <a href='<%= BASE_URL %>/timers/new'>Add new timer</a>
   <a href='<%= BASE_URL %>/csv.txt'>CSV output</a>
 </nav>
+
+<% if @timers.empty? %>
+  <p>No timers.</p>
+<% end %>
 
 <ul>
   <% @timers.each_with_index do |timer, idx| %>
