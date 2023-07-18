@@ -1,0 +1,21 @@
+<% if @timers.empty? %>
+  <p>No timers.</p>
+<% end %>
+
+<nav>
+  <a href='<%= BASE_URL %>/timers/new'>Add new timer</a>
+  <a href='<%= BASE_URL %>/csv.txt'>CSV output</a>
+</nav>
+
+<ul>
+  <% @timers.each_with_index do |timer, idx| %>
+    <li class='timer_list'>
+      <a href='<%= BASE_URL %>/timers/<%= idx %>'>
+        <h3><%= timer[:name] %></h3>
+      </a>
+      <form action='<%= BASE_URL %>/timers/<%= idx %>/action' method='post'>
+        <input type='submit' value='<%= button_label(idx) %>'>
+      </form>
+    </li>
+  <% end %>
+</ul>

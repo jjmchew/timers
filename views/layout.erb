@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timers</title>
+  <meta charset='UTF-8'>
+  <link rel='stylesheet' href='/stylesheets/css-reset.css'>
+  <link rel='stylesheet' href='/stylesheets/timers.css'>
+</head>
+
+<body>
+  <header>
+    <h1>Timers</h1>
+
+    <aside>
+      <% if session[:message] %>
+       <div class='flash_message'><%= session.delete(:message) %></div>
+      <% end %>
+    </aside>
+  </header>
+  
+  <main>
+    <%= yield %>
+  </main>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<h2>Timer "<%= @timer[:name] %>" entries</h2>
+
+<ul>
+<% @timer[:entries].each do |entry| %>
+  <li><%= display_time_entry(entry) %></li>
+<% end %>
+</ul>
+
+<a href='<%= BASE_URL %>/timers'>Back to all timers</a>
